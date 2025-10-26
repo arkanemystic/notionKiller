@@ -1,0 +1,71 @@
+{
+  "name": "notion-killer",
+  "version": "2.2.0",
+  "description": "Personal productivity dashboard with calendar integration",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win --x64",
+    "build:mac": "electron-builder --mac --arm64"
+  },
+  "keywords": [
+    "electron",
+    "dashboard",
+    "productivity",
+    "calendar"
+  ],
+  "author": "Devakh Rashie",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.3.11",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "electron-store": "^8.2.0",
+    "node-ical": "^0.17.2",
+    "uuid": "^9.0.1"
+  },
+  "build": {
+    "appId": "com.personaldashboard.app",
+    "productName": "Personal Dashboard",
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "lib/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "arch": [
+        "x64"
+      ]
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "arch": [
+        "arm64"
+      ],
+      "category": "public.app-category.productivity"
+    }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arkanemystic/notionKiller.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arkanemystic/notionKiller/issues"
+  },
+  "homepage": "https://github.com/arkanemystic/notionKiller#readme"
+}
